@@ -17,9 +17,9 @@ async def start(update: Update, context) -> None:
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text("Welcome to DevStudioAL! Choose an option below:", reply_markup=reply_markup)
 
-# Back to main menu function with message auto-deletion
+# Back to main menu function
 async def back_to_main(query: Update, context) -> None:
-    await start(query.message, context)
+    await start(query.message, context)  # Use query.message
 
 # Function to auto-delete messages
 async def delete_message(context) -> None:
